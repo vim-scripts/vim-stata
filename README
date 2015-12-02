@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=5279
+
+Vim is known as a highly configurable text editor built to enable efficient text editing and Stata is one of the most popular statistical package which has a huge users community. This plugin (beta) is developed under the Mac OS X to make connections between Vim and Stata. With our plugin, you could easily send the selected do files from Vim editor and have it run in Stata. To our best knowledge, this is probably the first plugin to link Vim and Stata under the Unix-like platform. (For Windows users, please refer to the information in the last section). Please feel free to let us know if you have any comment and suggestion.
+
+(Last edited on 2nd Dec 2015 by Z Yan and C Wang )
+
+Github webpage: https://github.com/zizhongyan/vim-stata 
+
+Background information
+
+1, This plugin is motivated by the article "Some notes on text editors for Stata users"(http://fmwww.bc.edu/repec/bocode/t/textEditors.html#vim).
+
+This plugin basically creates a temporary do-file, which is then sent to the Stata to execute. The Stata13+ has introduced the AppleScript commands (i.e. DoCommand and DoCommandAsync) which allows script commands to directly enter the Stata without creating any temporary file. However, we did not consider this option for two reasons:
+
+i) AppleScript commands will go through all selected commands anyways even if the Stata has already reported an error message. This behaves quite differently from the Stata in-built do-file editor and could probably cause mistakes.
+
+ii) AppleScript commands sometimes do not work properly based on our own experience and tests, though we have not figured out the reason so far. Therefore we believe that creating a temporary do-file would be safer and more reliable and it behaves exactly the same as what the in-built do-file editor does. The temp file is harmless since it has just been temporarily saved in a cache folders in the OS X.
+
+2, For Windows users, please follow the instructions in the webpage above.
+
+3, This plugin has been tested on Mac OS X Yosemite and El Capitan and supports Stata 12-14SE/MP/IC. (It should also work well with Stata 11, but has not been formally tested)
